@@ -11,8 +11,19 @@
 |
 */
 
-Route::get('/', 'WebsiteController@index');
+Route::get('/', 'WebsiteController@index')->name('website.index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['web','auth']], function(){
+    Route::resource('/user', 'UserController');
+});
+
+Route::group(['middleware' => ['web','auth']], function(){
+    Route::resource('/attraction-type', 'AttractionTypeController');
+});
+Route::group(['middleware' => ['web','auth']], function(){
+    Route::resource('/attraction', 'AttractionController');
+});
