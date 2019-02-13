@@ -4,18 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use DataTables;
-use Yajra\DataTables\Html\Builder;
-// use App\Helpers\ResponseHelper;
+use App\Services\UserService;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
+    private $user;
+     /**
+     * LodgingController constructor.
+     */
+    public function __construct()
+    {
+        $this->user = new UserService();
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Builder $builder)
+    public function index()
     {  
         $users = User::all();
         return view('users.index', compact('users'));
@@ -28,7 +36,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -39,7 +47,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $this->user->store($request);
+
+            flash('Tambah User berhasil!')->success();
+            return redirect()->route('user.index');
+         }
+         catch (\Exception $exception) {
+             flash($exception->getMessage())->error();
+             return redirect()->back();
+         }
+
+       
     }
 
     /**
@@ -50,7 +69,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        return view('users.show', compact('user'));
     }
 
     /**

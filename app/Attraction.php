@@ -23,5 +23,10 @@ class Attraction extends Model
         return $this->belongsTo(AttractionType::class);
     }
 
+    public function pictures()
+    {
+        return $this->morphMany(Picture::class, 'pictureable');
+    }
+
     
 }

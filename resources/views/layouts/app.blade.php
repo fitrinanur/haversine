@@ -24,6 +24,7 @@
 </head>
 <body>
     <div id="app">
+            
         <nav class="uk-navbar-container" uk-navbar>
             @guest
             <div class="uk-navbar-right">
@@ -121,6 +122,7 @@
         </nav>
 
         <main>
+            @include('flash::message')
             @yield('content')
         </main>
     </div>
@@ -130,6 +132,9 @@
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+    <script>
+        jQuery('div.alert').not('.alert-important').delay(1000).fadeOut(500);
+    </script>    
     @stack('javascript')
 </body>
 </html>

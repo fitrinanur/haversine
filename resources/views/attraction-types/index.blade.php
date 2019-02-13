@@ -1,51 +1,38 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="uk-container">
-    <div class="uk-card uk-card-default uk-grid-collapse uk-table-divider uk-margin uk-padding" uk-grid style="margin-top:20px;">
-        <div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Data User</h3>
-                <table class="uk-table uk-table-hover uk-table-divider  uk-table-condensed">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th colspan="3" style="text-align:center">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($attractionTypes as $key => $attractionType)
-                        <tr>
-                            <td>{{ $key+1 }}</td>
-                            <td>{{ $attractionType->name }}</td>
-                            <td>
-                                <button class="uk-button uk-button-default" type="button">
-                                    <a href="{{ route('attraction-type.show', $attractionType->id)}}" uk-icon="icon: file-text"></a>
-                                </button>
-                            </td>
-                            <td>
-                                <button class="uk-button uk-button-primary" type="button">
-                                    <a href="{{ route('attraction-type.edit', $attractionType->id)}}" uk-icon="icon: pencil"></a>
-                                </button>
-                            </td>
-                            <td>
-                                <form action="{{ route('attraction-type.destroy', $attractionType->id)}}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="uk-button uk-button-danger" type="submit" uk-icon="icon: trash"></button>
-                                </form>
-
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+<div class="container">
+    <div class="card" style="margin-top:30px;">
+        <div class="card-body">
+            <h3 class="card-title">Card title</h3>
+            <a href="{{ route('attraction-type.create') }}" class="btn btn-sm btn-info" style="float:right;margin-bottom:10px;">Tambah Tipe</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Tipe</th>
+                        <th colspan="3" style="text-align:center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($attractionTypes as $key => $attractionType)
+                    <tr>
+                        <td>{{ $key+1 }}</td>
+                        <td>{{ $attractionType->name }}</td>
+                        <td>
+                            <a href="{{ route('attraction-type.show', $attractionType->id)}}" class="btn btn-success" uk-icon="icon: file-text"></a>
+                            <a href="{{ route('attraction-type.edit', $attractionType->id)}}" class="btn btn-primary" uk-icon="icon: pencil"></a>
+                            <form action="{{ route('attraction-type.destroy', $attractionType->id)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit" class="btn btn-danger" uk-icon="icon: trash"></button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
-
 @stop
