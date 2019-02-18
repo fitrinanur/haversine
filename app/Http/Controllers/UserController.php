@@ -82,7 +82,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -92,9 +93,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        try {
+            $this->user->update($request, $user);
+
+            flash('Tambah User berhasil!')->success();
+            return redirect()->route('user.index');
+         }
+         catch (\Exception $exception) {
+             flash($exception->getMessage())->error();
+             return redirect()->back();
+         }
     }
 
     /**
@@ -105,6 +115,16 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $user = User::findOrFail($id);
+            $user->delete();
+            flash('Pengguna telah dihapus!')->success();
+            return redirect()->route('user.index');
+        }
+
+        catch (\Exception $exception) {
+            flash($exception->getMessage())->error();
+            return redirect()->back();
+        }
     }
 }

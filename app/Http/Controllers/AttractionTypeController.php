@@ -49,8 +49,16 @@ class AttractionTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $attractionType = $this->attractionType->store($request);
+        try {
+            $attractionType = $this->attractionType->store($request);
 
+            flash('Tambah Tipe Wisata berhasil!')->success();
+            return redirect()->route('attraction-type.index');
+        }
+         catch (\Exception $exception) {
+             flash($exception->getMessage())->error();
+             return redirect()->back();
+        }
     }
 
     /**
@@ -82,9 +90,19 @@ class AttractionTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, AttractionType $attractionType)
     {
-        $attractionType = $this->attractionType->update($request);
+        try {
+
+            $attractionType = $this->attractionType->update($request,$attractionType);
+
+            flash('Tambah Tipe Wisata berhasil!')->success();
+            return redirect()->route('attraction-type.index');
+        }
+         catch (\Exception $exception) {
+             flash($exception->getMessage())->error();
+             return redirect()->back();
+        }
     }
 
     /**
@@ -95,6 +113,16 @@ class AttractionTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $attractionType = AttractionType::findOrFail($id);
+            $attractionType->delete();
+            flash('Tipe Wisata Telah Dihapus!')->success();
+            return redirect()->route('attraction-type.index');
+        }
+
+        catch (\Exception $exception) {
+            flash($exception->getMessage())->error();
+            return redirect()->back();
+        }
     }
 }

@@ -28,5 +28,11 @@ class Attraction extends Model
         return $this->morphMany(Picture::class, 'pictureable');
     }
 
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
+
     
 }

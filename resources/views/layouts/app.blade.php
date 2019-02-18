@@ -133,8 +133,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
     <script>
-        jQuery('div.alert').not('.alert-important').delay(1000).fadeOut(500);
-    </script>    
+            $(document).ready(function() {
+                // Active tooltip
+                $(function () {
+                    $('[data-toggle="tooltip"]').tooltip()
+                });
+                $('div.alert').not('.alert-important').delay(4000).fadeOut();
+            });
+        </script>    
     @stack('javascript')
 </body>
 </html>

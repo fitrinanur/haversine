@@ -8,7 +8,7 @@
 namespace App\Services;
 
 use App\Helpers\ResponseHelper;
-use App\Models\City;
+use App\AttractionType;
 use Illuminate\Support\Facades\Auth;
 
 

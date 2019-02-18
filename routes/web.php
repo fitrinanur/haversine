@@ -22,8 +22,17 @@ Route::group(['middleware' => ['web','auth']], function(){
 });
 
 Route::group(['middleware' => ['web','auth']], function(){
-    Route::resource('/attraction-type', 'AttractionTypeController');
+    Route::resource('/attraction-type', 'AttractionTypeController')->except(['show']);
 });
 Route::group(['middleware' => ['web','auth']], function(){
     Route::resource('/attraction', 'AttractionController');
+    Route::post('/attraction/{attraction}/image', 'AttachmentController@store')->name('attraction.image');
+    Route::delete('/attraction/{attraction}/image-management/{image}', 'AttachmentController@destroy')->name('attraction.image-management.destroy');
 });
+
+Route::get('province/{cities}/cities.json', function($cities) {
+    return App\City::where('province_id', $cities)->get();
+});
+
+
+Route::delete('/lodging/{lodging}/image-management/{image}', 'AttachmentController@destroy')->name('lodging.image-management.destroy');

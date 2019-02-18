@@ -8,7 +8,7 @@
 namespace App\Services;
 
 use App\Helpers\ResponseHelper;
-use App\Models\City;
+use App\City;
 use App\Attraction;
 use App\AttractionType;
 use Illuminate\Support\Facades\Auth;
@@ -21,7 +21,24 @@ class AttractionService
     {
         $attraction = new Attraction();
         $attraction->name = $request->name;
+        $attraction->attractionType()->associate($request->attractionType);
+        $attraction->address = $request->address;
+        $attraction->city()->associate($request->city);
+        $attraction->latitude = $request->latitude;
+        $attraction->longitude = $request->longitude;
+        $attraction->description = $request->description;
         $attraction->save();
+
+        if ($request->picture) {
+            foreach ($request->picture as $pict) {
+                $pictureService = new PictureService();
+                $picture = $pictureService->store($pict, 'attraction');
+                $attraction->pictures()->create([
+                    'path' => $picture['path'],
+                    'file_name' => $picture['name']
+                ]);
+            }
+        }
 
         return $attraction;
     }
@@ -36,6 +53,12 @@ class AttractionService
     public function update($request, $attraction)
     {
         $attraction->name = $request->name;
+        $attraction->attraction_type_id = $request->attractionType;
+        $attraction->address = $request->address;
+        $attraction->city_id =$request->city;
+        $attraction->latitude = $request->latitude;
+        $attraction->longitude = $request->longitude;
+        $attraction->description = $request->description;
         $attraction->update();
        
         return $attraction;

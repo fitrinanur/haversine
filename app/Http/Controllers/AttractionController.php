@@ -40,7 +40,11 @@ class AttractionController extends Controller
      */
     public function create()
     {
-        //
+        $attractionTypes = AttractionType::all();
+        $cities = City::all();
+        $provincies = Province::all();
+        
+        return view('attractions.create', compact('attractionTypes','provincies','cities'));
     }
 
     /**
@@ -51,7 +55,16 @@ class AttractionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $this->attraction->store($request);
+
+            flash('Tambah penginapan berhasil!')->success();
+            return redirect()->route('attraction.index');
+         }
+         catch (\Exception $exception) {
+             flash($exception->getMessage())->error();
+             return redirect()->back();
+         }
     }
 
     /**
@@ -72,8 +85,12 @@ class AttractionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   $attraction = Attraction::findOrFail($id);
+        $attractionTypes = AttractionType::all();
+        $cities = City::all();
+        $provincies = Province::all();
+        
+        return view('attractions.edit', compact('attraction','attractionTypes','provincies','cities'));
     }
 
     /**
@@ -83,9 +100,18 @@ class AttractionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Attraction $attraction)
     {
-        //
+        try {
+            $attraction = $this->attraction->update($request,$attraction);
+
+            flash('Update Wisata berhasil!')->success();
+            return redirect()->route('attraction.index');
+        }
+         catch (\Exception $exception) {
+             flash($exception->getMessage())->error();
+             return redirect()->back();
+        }
     }
 
     /**
@@ -94,8 +120,17 @@ class AttractionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Attraction $attraction)
     {
-        //
+        try {
+            $attraction->delete();
+            flash('Data Wisata telah dihapus!')->success();
+            return redirect()->route('attraction.index');
+        }
+
+        catch (\Exception $exception) {
+            flash($exception->getMessage())->error();
+            return redirect()->back();
+        }
     }
 }
