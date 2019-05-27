@@ -19,7 +19,6 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('12345678'),
             'address' => $generator->address,
             'phone_number' => $generator->phoneNumber,
-            'birthday' => $generator->date($format = 'Y-m-d', $max = 'now'),
             'created_at' => \Carbon\Carbon::now()->subDays(rand(1, 100))
         ]);
     }

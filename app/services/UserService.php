@@ -23,6 +23,16 @@ class UserService
             'phone_number' => $request->phone_number,
             'address' => $request->address
         ]);
+        if ($request->picture) {
+            foreach ($request->picture as $pict) {
+                $pictureService = new PictureService();
+                $picture = $pictureService->store($pict, 'user');
+                $attraction->pictures()->create([
+                    'path' => $picture['path'],
+                    'file_name' => $picture['name']
+                ]);
+            }
+        }
         return $user;
     }
 

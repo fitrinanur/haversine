@@ -19,7 +19,7 @@
     <!-- Font Awesome -->
     <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
     
-    @stack('scripts')
+    @stack('styles')
 </head>
 <body>
     <div id="app">

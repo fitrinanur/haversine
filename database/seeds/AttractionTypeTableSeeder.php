@@ -23,6 +23,15 @@ class AttractionTypeTableSeeder extends Seeder
 
             [
                 'name' => 'Museum',
+            ],
+            [
+                'name' => 'Desa Wisata',
+            ],
+            [
+                'name' => 'Sendang/Petilasan',
+            ],
+            [
+                'name' => 'Lainnya',
             ]
         ];
 

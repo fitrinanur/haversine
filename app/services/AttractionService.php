@@ -64,4 +64,40 @@ class AttractionService
         return $attraction;
 
     }
+
+    public function nearbyAttraction($attraction, $request)
+    {
+        // try {
+            $attractions = Attraction::selectRaw("
+                id,
+                city_id,
+                atraction_type_id,
+                name,
+                description,
+                address,
+                longitude,
+                latitude,
+                ( 6371 * acos( cos( radians('" . $request->latitude . "') )
+                       * cos( radians(latitude) )
+                       * cos( radians(longitude)
+                       - radians('" . $request->longitude . "') )
+                       + sin( radians('" . $request->latitude . "') )
+                       * sin( radians(latitude) ) ) ) AS distances
+            ");
+
+            $attractions->with('attractionType', 'city', 'city.province');
+
+            $attractions = $attractions->havingRaw('distances < 000');
+
+            $attractions = $attractions->whereNotNull('longitude')->get();
+
+            return dd($attractions);
+
+
+    //     }
+
+    //     catch (\Exception $exception) {
+    //         return $this->response->failedResponse($exception);
+    //     }
+    }
 }

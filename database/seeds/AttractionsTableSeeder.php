@@ -24,9 +24,10 @@ class AttractionsTableSeeder extends Seeder
         $fileArray = $converter->csvToArray($file); 
         foreach ($fileArray as $key => $data) {
             $city = \App\City::where('name', 'like', '%'.$data['Kota'].'%')->first();
+            $type = \App\AttractionType::where('name','like','%'.$data['Tipe'].'%')->first();
             $attraction = new \App\Attraction();
             $attraction->name = $data['Nama'];
-            $attraction->attraction_type_id = rand(1, 2);
+            $attraction->attraction_type_id = $type->id;
             $attraction->address = $data['Alamat'];
             $attraction->city_id = $city->id;
             $attraction->latitude = $data['Latitude'];

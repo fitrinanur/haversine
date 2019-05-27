@@ -1,4 +1,70 @@
-No.,Nama,Kota,Alamat,No. Tlp,Latitude,Longitude,Description
-1,Pantai Indayanti,Yogyakarta,Gunung Kidul,81329988000,-7.765923,110.411445,
-2,Museum Merapi,Yogyakarta,Yogyakarta,81329988000,-7.765923,110.411445,
-3,Kaliurang,Yogyakarta,Jl. Kaliurang No.26,81329988000,-7.765923,110.411445,
+No.,Nama,Kota,Alamat,No. Tlp,Latitude,Longitude,Description,Tipe
+1,Pantai Jungwook,Yogyakarta,Gunu Pendowo Jepitu Girisubo Gunung Kidul,81329988000,-8.19754,110.41445,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+2,Pantai Parangtritis Yogyakarta,Yogyakarta,Jalan Parangtritis km 28 Yogyakarta 55188,81329988000,-8.021805,110.321277,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+3,Pantai Depok,Yogyakarta,Depok Bantul,81329988000,-8.015688,110.299927,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+4,Pantai Drini,Yogyakarta,Tepus Gunungkidul,81329988000,-8.147583,110.597316�,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+5,Pantai Parangendog,Yogyakarta,Parang Reja Girijati Purwosari Kabupaten Gunung Kidul,81329988000,-8.030056,110.344419,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+6,Pantai Parangkusumo,Yogyakarta,Parangkusumo Parangtritis Bantul,81329988000,-8.022609,110.328259,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+7,Pantai Samas,Yogyakarta,Bantul Gunungkidul,81329988000,-8.005926,110.264849,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+8,Pantai Trisik,Yogyakarta,Kulon Progo,81329988000,-7.975377,110.192695,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+9,Petilasan Ambarketawang,Yogyakarta,Kulon Progo,81329988000,-7.800533,110.309573,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+10,Salak Turi,Yogyakarta,Kulon Progo,81329988000,-7.650463,110.357894,Desccribe About This Place. Do not To Long Do not To Short. ,Sendang/Petilasan
+11,Sendang Kasihan,Yogyakarta,Jl sendang kasihan Kasihan Tamantirto Bantul,81329988000,-7.826082,110.32911,Desccribe About This Place. Do not To Long Do not To Short. ,Sendang/Petilasan
+12,Situs Payak,Yogyakarta,Jl Wonosari Bantaran Wetan Srimulyo Piyungan Bantul�,81329988000,-7.83334,110.45771,Desccribe About This Place. Do not To Long Do not To Short. ,Sendang/Petilasan
+13,Situs Watugudig,Yogyakarta,Jobohan Bokoharjo Prambanan Kabupaten Sleman,81329988000,-7.775,110.48075,Desccribe About This Place. Do not To Long Do not To Short. ,Sendang/Petilasan
+14,Tamansari,Yogyakarta,Jl Tamanan Patehan Kraton,81329988000,-7.80994,110.35939,Desccribe About This Place. Do not To Long Do not To Short. ,Museum
+15,Pantai Indrayanti,Yogyakarta,Tepus Gunungkidul,81329988000,-8.9122,110.36441,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+16,Pantai Sepanjang,Yogyakarta,Desa Kemadang Tanjungsari Gunungkidul,81329988000,-8.802,110.33113,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+17,Pantai Sadeng,Yogyakarta,Girisubo Gunungkidul,81329988000,-8.11266,110.47531,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+18,Pantai Wediombo,Yogyakarta,Jepitu Girisubo Gunungkidul,81329988000,-8.1138,110.42314,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+19,Pantai Sundak,Yogyakarta,Desa Sidoharjo Tepus Gunungkidul,81329988000,-8.8478,110.36273,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+20,Pantai Ngobaran,Yogyakarta,Desa Kanigoro Saptosari,81329988000,-8.7106,110.30204,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+21,Pantai Glagah,Yogyakarta,Kulon Progo,81329988000,-7.54458,110.3595,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+22,Pantai Congot,Yogyakarta,Kulon Progo,81329988000,-7.53589,110.234,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+23,Pantai Ngrenehan,Yogyakarta,Desa Kanigoro Saptosari,81329988000,-8.7192,110.3048,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+24,Pantai Siung,Yogyakarta,�Tepus Gunungkidul,81329988000,-8.10547,110.40585,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+25,Pantai Trisik,Yogyakarta,kulon Progo,81329988000,-7.58262,110.11371,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+26,Pantai Kuwaru,Yogyakarta,Desa Poncosari Kecamatan Srandakan Bantul,81329988000,-7.5923,110.1343,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+27,Pantai Goa Cemara,Yogyakarta,Patihan Gadingsari Bantul,81329988000,-7.5946,110.1452,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+28,Pantai Gesing,Yogyakarta,Patihan Gadingsari Bantul,81329988000,-8.628,110.285,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+29,Pantai Nguyahan,Yogyakarta,Desa Kanigoro Saptosari,81329988000,-8.77,110.3011,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+30,Pantai Baron,Yogyakarta,Tepus Gunungkidul,81329988000,-8.754,110.3252,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+31,Pantai Kukup,Yogyakarta,Tepus Gunungkidul,81329988000,-8.81,110.3315,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+32,Pantai Watu Kodok,Yogyakarta,Tepus Gunungkidul,81329988000,-8.812,110.3427,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+33,Pantai Sarangan,Yogyakarta,Tepus Gunungkidul,81329988000,-8.85,110.3549,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+34,Pantai Krakal,Yogyakarta,Tepus Gunungkidul,81329988000,-8.843,110.3559,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+35,Pantai Sadranan,Yogyakarta,Tepus Gunungkidul,81329988000,-8.844,110.3616,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+36,Pantai Ngandong,Yogyakarta,Tepus Gunungkidul,81329988000,-8.847,110.362,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+37,Pantai Sundak,Yogyakarta,Tepus Gunungkidul,81329988000,-8.849,110.3628,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+38,Pantai Somandeng,Yogyakarta,Tepus Gunungkidul,81329988000,-8.857,110.3635,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+39,Pantai Watulawang,Yogyakarta,Tepus Gunungkidul,81329988000,-8.914,110.376,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+40,Pantai Pok Tunggal,Yogyakarta,Tepus Gunungkidul,81329988000,-8.92,110.3717,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+41,Pantai Seruni,Yogyakarta,Tepus Gunungkidul,81329988000,-8.937,110.3755,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+42,Pantai Ngetun,Yogyakarta,Tepus Gunungkidul,81329988000,-8.1014,110.398,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+43,Pantai Timang,Yogyakarta,Tepus Gunungkidul,81329988000,-8.1033,110.3946,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+44,Pantai Jogan,Yogyakarta,Tepus Gunungkidul,81329988000,-8.1049,110.4033,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+45,Pantai Nglambor,Yogyakarta,Tepus Gunungkidul,81329988000,-8.1058,110.4043,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+46,Pantai Siung,Yogyakarta,Tepus Gunungkidul,81329988000,-8.1055,110.4058,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+47,Pantai Sadeng,Yogyakarta,Tepus Gunungkidul,81329988000,-8.1131,110.4745,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+48,Pantai Ngusalan,Yogyakarta,Tepus Gunungkidul,81329988000,-8.115,110.4253,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+49,Pantai Greweng,Yogyakarta,Tepus Gunungkidul,81329988000,-8.1152,110.437,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+50,Pantai Sedahan,Yogyakarta,Tepus Gunungkidul,81329988000,-8.1152,110.4315,Desccribe About This Place. Do not To Long Do not To Short. ,Pantai
+51,Museum Monumen Jogja Kembali,Yogyakarta,Jl. Ringroad Utara No 15 Sariharjo Ngaglik Kabupaten Sleman,81329988000,-7.749271,110.369628,Desccribe About This Place. Do not To Long Do not To Short. ,Museum
+52,Museum Benteng Vredeburg,Yogyakarta,Jl. Margo Mulyo No 6 Ngupasan Gondomanan�,81329988000,-7.7984,110.366257,Desccribe About This Place. Do not To Long Do not To Short. ,Museum
+53,Museum SonoBudoyo,Yogyakarta,Ndalem Condrokiranan Wijilan,81329988000,-7.802152,110.364041,Desccribe About This Place. Do not To Long Do not To Short. ,Museum
+54,Museum TNI AU Dirgantara,Yogyakarta,Karang Janbe Banguntapan Bantul Regency,81329988000,-7.789406,110.41568,Desccribe About This Place. Do not To Long Do not To Short. ,Museum
+55,Museum Bahari,Yogyakarta,Jalan R. E. Martadinata No 69 Wirobrajan Bantul,81329988000,-7.800793,110.34921,Desccribe About This Place. Do not To Long Do not To Short. ,Museum
+56,Museum Tembi,Yogyakarta,"Jl. Parangtritis No.Km 8.4, Tembi, Timbulharjo, Sewon, Bantul, Daerah Istimewa Yogyakarta 55186",81329988000,-7.869742,110.356227,Desccribe About This Place. Do not To Long Do not To Short. ,Museum
+57,Museum Kebun Raya Gembiraloka,Yogyakarta,Jl Kebun Raya No 2 Rejowinangun Kotagede,81329988000,-7.804975,110.398059,Desccribe About This Place. Do not To Long Do not To Short. ,Museum
+58,Desa Wisata Sambi,Yogyakarta,Jl Kaliurang KM 19 Dusun Sambi Desa Pakembinangun Kec Pakem Purwodadi Pakembinangun Sleman,81329988000,-7.647466,110.426734,Desccribe About This Place. Do not To Long Do not To Short. ,Desa Wisata
+59,Desa Wisata Tanjung,Yogyakarta,Desa Tanjung Ponason Donoharjo Ngaglik Kabupaten Sleman,81329988000,-7.70401,110.379419,Desccribe About This Place. Do not To Long Do not To Short. ,Desa Wisata
+60,Desa Wisata Pulesari,Yogyakarta,Pulesari Wono Kerto Turi Kabupaten Sleman,81329988000,-7.625519,110.37173,Desccribe About This Place. Do not To Long Do not To Short. ,Desa Wisata
+61,Desa Wisata Banjaroya,Yogyakarta,Jl Kalibawang-Sendang Sono Tonogoro Banjaroyo Kalibawang Kabupaten Kulon Progo,81329988000,-7.655722,110.235468,Desccribe About This Place. Do not To Long Do not To Short. ,Desa Wisata
+62,Desa Wisata Kaki Langit,Yogyakarta,Mangunan Dlingo Bantul,81329988000,-7.931397,110.421938,Desccribe About This Place. Do not To Long Do not To Short. ,Desa Wisata
+63,Desa Wisata Kebonagung,Yogyakarta,Dusun Kebonagung Kebon Agung Imogiri Bantul,81329988000,-7.930205,110.371252,Desccribe About This Place. Do not To Long Do not To Short. ,Desa Wisata
+64,Desa Wisata Kasongan,Yogyakarta,Jl Kasongan No 3 Kajen Bangunjiwo Kasihan Bantul,81329988000,-7.845122,110.337909,Desccribe About This Place. Do not To Long Do not To Short. ,Desa Wisata
+65,Desa Wisata Batik Tulis Giriloyo,Yogyakarta,Jl Imogiri Timur Km 14 Karang Kulon Wukirsari Imogiri Bantul,81329988000,-7.915584,110.398445,Desccribe About This Place. Do not To Long Do not To Short. ,Desa Wisata
+66,Desa Wisata Gamplong,Yogyakarta,Sumberrahayu Moyudan Dukuh Sumberrahayu Moyudan,81329988000,-7.805194,110.2375,Desccribe About This Place. Do not To Long Do not To Short. ,Desa Wisata
+67,Desa Wisata Kelor,Yogyakarta,Kelor Bangun Kerto Turi Kabupaten Sleman,81329988000,-7.640696,110.362215,Desccribe About This Place. Do not To Long Do not To Short. ,Desa Wisata
+68,Malioboro Yogyakarta,Yogyakarta,Jl Malioboro No 61-65 Sosromenduran Gedong Tengen,81329988000,-7.793902,110.365647,Desccribe About This Place. Do not To Long Do not To Short. ,Lainnya
+69,Titik Nol Yogyakarta,Yogyakarta,Jl Panembahan Senopati Prawirodirjan Gondomanan,81329988000,-7.800056,110.36569,Desccribe About This Place. Do not To Long Do not To Short. ,Lainnya

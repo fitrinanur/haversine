@@ -12,10 +12,6 @@
                 <a class="nav-link" id="image-tab" data-toggle="tab" href="#image" role="tab" aria-controls="image"
                     aria-selected="false">Foto</a>
             </li>
-            {{-- <li class="nav-item">
-                <a class="nav-link" id="facility-tab" data-toggle="tab" href="#facility" role="tab" aria-controls="facility"
-                    aria-selected="false">Fasilitas</a>
-            </li> --}}
         </ul>
         <div class="card-body">
             <div class="tab-content" id="lodgingTabContent">
@@ -231,9 +227,8 @@
                 $('#province').val(y);
             }
             $('#province').change(function () {
-                $.get('/province/' + this.value + '/cities.json', function (cities) {
+                jQuery.get('/province/' + this.value + '/cities.json', function (cities) {
                     var $cityEl = $('#city');
-                    console.log(cities);
                     // Clear state select
                     $cityEl.find('option').remove().end();
 
