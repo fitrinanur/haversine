@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Attraction;
+use App\AttractionType;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $attractions = Attraction::get();
+        $attractionTypes = AttractionType::get();
+        $users = User::get();
+        return view('dashboard.index', compact('attractions','attractionTypes','users'));
     }
 }

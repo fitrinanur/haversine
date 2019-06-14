@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Attraction;
 use App\AttractionType;
+use App\Guestbook;
 use App\Services\AttractionService;
 use League\Geotools\Coordinate\Ellipsoid;
 use Toin0u\Geotools\Facade\Geotools;
@@ -128,6 +129,22 @@ class WebsiteController extends Controller
             $url = "https://www.google.com/maps/dir/Current+Location/".$lat.",".$lang;
             return redirect()->away($url);
         }
+    }
 
+    public function guestbook(Request $request)
+    {
+        try {
+            $guestbook = new Guestbook();
+            $guestbook->email = $request->email;
+            $guestbook->message = $request->message;
+            $guestbook->save();
+
+            flash('Terimakasih atas saran dan kritik anda.')->success();
+            return redirect()->route('website.index');
+         }
+         catch (\Exception $exception) {
+             flash($exception->getMessage())->error();
+             return redirect()->back();
+         }
     }
 }

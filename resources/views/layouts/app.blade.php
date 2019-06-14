@@ -69,8 +69,8 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="{{ route('user.index') }}">Data User</a>
-                                <a class="dropdown-item" href="{{ route('attraction-type.index') }}">Data Tipe Pariwisata</a>
-                                <a class="dropdown-item" href="{{ route('attraction.index') }}">Data Pariwisatae</a>
+                                <a class="dropdown-item" href="{{ route('attraction-type.index') }}">Data Jenis Pariwisata</a>
+                                <a class="dropdown-item" href="{{ route('attraction.index') }}">Data Pariwisata</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown" style="float:right">

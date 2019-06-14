@@ -43,7 +43,7 @@
         margin: 10px;
     }
 
-   
+
     }
 
 </style>
@@ -113,44 +113,43 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-6 left">
-        <h3>Tinggalkan Pesan Anda</h3>
+<div class="row" >
+    <div class="col-lg-8">
+        <div class="card" style="margin: 10px 0px 10px 10px;">
+            <div class="card-body">
+                <h3>Buku Tamu</h3>
+                <form action="{{ route('website.guestbook')}}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Email</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" name="email"
+                        placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Pesan Anda :</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Kirim</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="col-lg-6 right">
-        <h3>Buku Tamu</h3>
-        {{-- <form action="{{ route('')}}" method="POST"> --}}
-            @csrf
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+
+    <div class="col-lg-4">
+        <div class="card" style="margin:10px 10px 10px 0;">
+            <div class="card-body">
+                <h3>Lorem ipsum dolor sit.</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus, porro error necessitatibus, impedit, recusandae hic iusto repellat minus expedita libero! Ipsa enim laboriosam, illo nisi suscipit optio iure eum velit nostrum vero minima accusantium recusandae beatae alias placeat, dicta ex assumenda. Voluptatem, iusto facere ex fuga minus in eligendi temporibus laudantium modi vitae quia quisquam autem quod nihil ratione unde aperiam libero ducimus? Placeat sint obcaecati incidunt quam nobis.</p>
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Pesan Anda :</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
-            </div>
-            <button class="btn btn-primary" type="submit">Kirim</button>
-        </form>
+        </div>
+    </div>
+</div>
+<div class="row" style="background-color:#222222;color:#f1f1f1">
+    <div class="container">
+        <p style="text-align: center;">Haversine &copy; 2019</p>
     </div>
 </div>
 
-<div class="uk-section-secondary uk-background-bottom-right uk-background-norepeat footer">
-    <div class="uk-container">
-        <div class="uk-grid-match uk-child-width-1-3@m" uk-grid>
-            <div class="uk-text-left">
-                <h3>Haversine</h3>
-                <div class="uk-child-width" uk-grid>
-                    <ul class="uk-list">
-                        <li>&copy; {{ date('Y') }}</li>
-</ul>
-</div>
-</div>
-<div class="uk-text-right">
-    <h3>Bussiness & Marketing</h3>
-</div>
-</div>
-</div>
-</div>
 @stop
 {{-- @push('javascript')
 <script type="application/javascript">

@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'WebsiteController@index')->name('website.index');
+Route::post('/', 'WebsiteController@guestbook')->name('website.guestbook');
 Route::post('/recommendation','WebsiteController@getRecommendation')->name('recommendation');
 Route::get('/gallery-page','WebsiteController@galleryPage')->name('website.gallery');
 Route::get('/attraction-direction-page','WebsiteController@directionPage')->name('website.direction-page');
