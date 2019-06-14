@@ -119,7 +119,7 @@
     </div>
     <div class="col-lg-6 right">
         <h3>Buku Tamu</h3>
-        <form action="post" method="POST">
+        {{-- <form action="{{ route('')}}" method="POST"> --}}
             @csrf
             <div class="form-group">
                 <label for="exampleFormControlInput1">Email address</label>

@@ -15,6 +15,7 @@ Route::get('/', 'WebsiteController@index')->name('website.index');
 Route::post('/recommendation','WebsiteController@getRecommendation')->name('recommendation');
 Route::get('/gallery-page','WebsiteController@galleryPage')->name('website.gallery');
 Route::get('/attraction-direction-page','WebsiteController@directionPage')->name('website.direction-page');
+Route::post('/attraction-direction-page','WebsiteController@directionStore')->name('direction.store');
 Route::get('/nearly-page','WebsiteController@nearlyPage')->name('website.nearly-page');
 Route::post('/nearly-process','WebsiteController@nearlyProcess')->name('website.nearlyProcess');
 

@@ -9,6 +9,7 @@ use App\Services\AttractionService;
 use League\Geotools\Coordinate\Ellipsoid;
 use Toin0u\Geotools\Facade\Geotools;
 
+
 class WebsiteController extends Controller
 {
     private $attraction;
@@ -84,11 +85,9 @@ class WebsiteController extends Controller
      */
     public function directionPage(Request $request)
     {
-        $rides = $this->rideMethod();
-        $start_location = '-7.788370';
-        $end_location = '110.363645';
+        $directionTypes = $this->directionType();
 
-        return view('website.direction', compact('rides','response','start_location','end_location','map')); 
+        return view('website.direction', compact('directionTypes','response','start_location','end_location','map')); 
       
     }
 
@@ -96,19 +95,39 @@ class WebsiteController extends Controller
     {
         
         return view('website.nearly');
-    } 
+    }
 
-
-    private function rideMethod()
+    private function directionType()
     {
-        $rides =
+        $directionTypes =
         [
-            '1' => 'Berkendara',
-            '2' => 'Bersepeda',
-            '3' => 'Transportasi Umum',
-            '4' => 'Jalan Kaki'
+            '1' => 'Alamat',
+            '2' => 'Longitude&Latitude',
         ];
 
-        return $rides;
+        return $directionTypes;
+    }
+
+    public function directionStore(Request $request)
+    {
+        // dd($request->all());
+        if($request->type == "1"){
+            // dd($request->type);
+            urlencode($destination = $request->address);
+            urlencode($origin = $request->start_location);
+            $url = "https://www.google.com/maps/dir/?api=1&origin=".$origin."&destination=".$destination;
+            // https://maps.google.com?saddr=".$origin."&daddr=".$destination314+Avery+Avenue+Syracuse+NY+13204
+            return redirect()->away($url);
+           
+        }else{
+            $lat = $request->latitude;
+            $lang = $request->longitude;
+
+            $lat1 = request()->get('lat');
+            $lon = request()->get('lon');
+            $url = "https://www.google.com/maps/dir/Current+Location/".$lat.",".$lang;
+            return redirect()->away($url);
+        }
+
     }
 }
