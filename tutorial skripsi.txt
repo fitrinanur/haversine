@@ -1,0 +1,38 @@
+======================  PETUNJUK INSTALLASI PROGRAM =======================
+1. Install localhost. (Dalam penelitian ini dicontohkan dengan XAMPP)
+2. Setting Path Environtment PHP pada windows :
+	a. Klik logo windows pada pojok kiri bawah–>klik kanan pada tombol 
+		“Computer”–>Pilih properties
+	b. Pada kotak properties pilih Advance System Settings
+	c. Pilih tab Advanced> pilih Environment Variable
+	d. Pada kotak Environment Variable pilih System Variable 
+		dengan nama variable “Path”–>klik edit
+	e. Pada kotak Variable Value tambahkan kode ini ;D:\xampp\php\
+	f. Ingat jangan hapus semua tulisan yang ada pada kotak tersebut!!!!
+	g. Jika sudah klik OK–>OK–>OK
+	h. ketik php -vesion pada CMD
+	i. Jika pada CMD muncul versi PHP yang diinstall, maka setting path telah berhasil
+3. Extract Program pada menu install program di C:/xampp/htdocs ( Hasil Extract adalah folder Haversine)
+4. Extract Database pada sembarang tempat ( Hasil Extract adalah haversine_2019-06-16.sql)
+5. Create Database di PHPMyAdmin dengan nama "haversine"
+6. Import .sql (Database) di database haversine
+7. Install Composer ( install dapat dilihat di https://getcomposer.org/download/)
+8. Membuat XAMPP Virtual Host dengan cara sebagai berikut :
+	a. Edit httpd-vhosts.conf pada C:\xampp\apache\conf\extra\httpd-vhosts.conf
+	b. Tambahkan Script sebagai berikut :
+		<VirtualHost aps.dev:80>
+  			DocumentRoot "C:\xampp\htdocs\Haversine\public"
+  			ServerAdmin aps.dev
+  			<Directory "C:\xampp\htdocs\Haversine">
+       			 	Options Indexes FollowSymLinks
+        			AllowOverride All
+        			Require all granted
+  			</Directory>
+		</VirtualHost>
+	c. Config our hosts file that allows to redirect aps.dev
+		to the localhost that is located in C:\Windows\System32\drivers\etc
+	d. Tambahkan 127.0.0.1	haversine.dev
+	e. Tutorial lengkap dapat dilihat di https://www.codementor.io/magarrent/how-to-install-laravel-5-xampp-windows-du107u9ji
+9. Jalankan di browser dengan url : haversine.dev
+
+
