@@ -92,7 +92,7 @@
 
                         </textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+                        <button type="submit" class="btn btn-primary mb-2">Tambahkan Wisata</button>
                     </form>
                 </div>
             </div>
@@ -104,7 +104,7 @@
 <script type="application/javascript">
     $(document).ready(function ($) {
         $('#province').change(function () {
-            $.get('/province/' + this.value + '/cities.json', function (cities) {
+            jQuery.get('/province/' + this.value + '/cities.json', function (cities) {
                 var $cityEl = $('#city');
                 console.log(cities);
                 // Clear state select
