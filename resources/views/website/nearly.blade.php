@@ -2,6 +2,26 @@
 
 
 @section('content')
+@push('styles')
+<style>
+    .header-info>ul {
+        list-style-type: none;
+        display: inline-flex;
+        padding: 3px;
+    }
+
+    .header-info>ul>li {
+        padding: 2px 10px;
+        margin-left: 10px;
+        border-radius: 5px;
+    }
+
+    .header-info>ul>li>a {
+        color: white;
+        font-size: 25px;
+    }
+</style>
+@endpush
 <div id=recommendation></div>
 @stop
     @push('javascript')
