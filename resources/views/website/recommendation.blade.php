@@ -69,11 +69,11 @@
                         </div>
                         <div class="header-info">
                             <ul class="header-social">
-                                <li style="background-color:tomato"><a href="#"
+                                <li style="background-color:tomato"><a href="{{$attraction->instagram_link}}"
                                         title="Instagram" target="_blank" ><i class="fa fa-instagram"
                                             aria-hidden="true"></i></a>
                                 </li>
-                                <li style="background-color:firebrick"><a href="#" title="Youtube"
+                                <li style="background-color:firebrick"><a href="{{$attraction->youtube_link}}" title="Youtube"
                                         target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
                                 </li>
                             </ul>

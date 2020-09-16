@@ -26,6 +26,8 @@ class AttractionService
         $attraction->city()->associate($request->city);
         $attraction->latitude = $request->latitude;
         $attraction->longitude = $request->longitude;
+		$attraction->youtube_link = $request->youtube_link;
+        $attraction->instagram_link = $request->instagram_link;
         $attraction->description = $request->description;
         $attraction->save();
 
@@ -58,6 +60,8 @@ class AttractionService
         $attraction->city_id =$request->city;
         $attraction->latitude = $request->latitude;
         $attraction->longitude = $request->longitude;
+		$attraction->youtube_link = $request->youtube_link;
+        $attraction->instagram_link = $request->instagram_link;
         $attraction->description = $request->description;
         $attraction->update();
        

@@ -53,15 +53,15 @@
 <header class="masthead bg-primary text-white text-center" style="padding-top:6rem;padding-bottom: 6rem;">
     <div class="container">
         {{-- logo --}}
-        <img class="img mb-5 d-block mx-auto" src="{{ asset('img/logo.png')}}" alt=""
-            style="width: 175px; height:200px;">
+        <img class="img mb-5 d-block mx-auto" src="https://1.bp.blogspot.com/-ZT52Eel0ea8/XTsPWjVjkaI/AAAAAAAAAHo/-eqTSwanuUUMNssOPEBiGt0EH_ov6mJfACLcBGAs/s1600/5.STMIK.png" alt=""
+            style="width: 200px; height:200px;">
 
         <h2 class="text-uppercase mb-0" style="color:#fff;font-size: 3rem;line-height: 3rem;">Sidang Akhir</h2>
         <hr>
         <h3 class="font-weight-light mb-0" style="font-size: 1.3rem;font-family: 'Lato';color: #fff;">
-            Sistem Pencarian Wisata Terdekat dengan Haversine Formula
+            Sistem Pemetaan Tempat Wisata DiKabupaten Grobogan
         </h3>
-        <p class="font-weight-light mb-0">Your Name - 13.5.000xx</p>
+        <p class="font-weight-light mb-0">LAODIKIA GALIH KRISNA PERBAWA - 14.5.00074</p>
         <p class="font-weight-light mb-0">STMIK SINAR NUSANTARA</p>
     </div>
 </header>
@@ -75,19 +75,13 @@
                 Visi
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card-block">
                         <h4 class="card-title"></h4>
-                        <p class="card-text">"Terwujudnya Yogyakarta sebagai salah satu destinasi terkemuka di Asia
-                            Tenggara
-                            pada
-                            tahun 2025 berdasarkan keunggulan produk wisata yang berkualitas, berwawasan budaya,
+                        <p class="card-text" style="text-align:center;align:justify;padding-bottom:210px;" >"Terwujudnya GROBOGAN sebagai salah satu destinasi di provensi Jawa Tengah
+                           dan menjadi keunggulan produk wisata yang berkualitas, berwawasan budaya,
                             berwawasan lingkungan, berkelanjutan dan menjadi salah satu pendorong tumbuhnya ekonomi
                             kerakyatan."</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card-img-bottom">
                     </div>
                 </div>
             </div>
@@ -99,13 +93,14 @@
                 Misi
             </div>
             <div class="card-body">
-                <img src="{{ asset('img/logo.png')}}" alt="" style="width:90px;height:100px;">
+			
+                <img src="https://1.bp.blogspot.com/-ZT52Eel0ea8/XTsPWjVjkaI/AAAAAAAAAHo/-eqTSwanuUUMNssOPEBiGt0EH_ov6mJfACLcBGAs/s1600/5.STMIK.png" alt="" style="width:151px;height:133px;">
                 <h4 class="card-title"></h4>
                 <ol style="text-align: left" class="card-text">
-                    <li>Mewujudkan destinasi pariwisata DIY yang berbasis budaya, lingkungan, kreatif dan
+                    <li>Mewujudkan destinasi pariwisata Kab Grobogan yang berbasis budaya, lingkungan, kreatif dan
                         inovatif, maju berkembang dan mampu menggerakan peningkatan perekonomian masyarakat
                         yang berkelanjutan.</li>
-                    <li>Mewujudkan destinasi pariwisata DIY yang berbasis budaya, lingkungan, kreatif dan
+                    <li>Mewujudkan destinasi pariwisata Kab Grobogan yang berbasis budaya, lingkungan, kreatif dan
                         inovatif, maju berkembang dan mampu menggerakan peningkatan perekonomian masyarakat
                         yang berkelanjutan.</li>
                 </ol>
@@ -131,15 +126,6 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Kirim</button>
                 </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-4">
-        <div class="card" style="margin:10px 10px 10px 0;">
-            <div class="card-body">
-                <h3>Lorem ipsum dolor sit.</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus, porro error necessitatibus, impedit, recusandae hic iusto repellat minus expedita libero! Ipsa enim laboriosam, illo nisi suscipit optio iure eum velit nostrum vero minima accusantium recusandae beatae alias placeat, dicta ex assumenda. Voluptatem, iusto facere ex fuga minus in eligendi temporibus laudantium modi vitae quia quisquam autem quod nihil ratione unde aperiam libero ducimus? Placeat sint obcaecati incidunt quam nobis.</p>
             </div>
         </div>
     </div>
