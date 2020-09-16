@@ -81,6 +81,14 @@
                                 <input type="text" name="longitude" class="form-control" id="exampleFormControlInput1">
                             </div>
                         </div><br>
+						 <div class="form-group">
+                            <label for="exampleFormControlInput1">Youtube Link</label>
+                            <input type="text" name="youtube_link" class="form-control" id="exampleFormControlInput1">
+                        </div>
+						 <div class="form-group">
+                            <label for="exampleFormControlInput1">Instagram Link</label>
+                            <input type="text" name="instagram_link" class="form-control" id="exampleFormControlInput1">
+                        </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Gambar</label>
                             <input type="file" name="picture[]" class="form-control-file" id="image" multiple>

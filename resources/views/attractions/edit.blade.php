@@ -100,6 +100,16 @@
                                     id="exampleFormControlInput1">
                             </div>
                         </div>
+						<div class="form-group">
+                            <label for="exampleFormControlInput1">Youtube Link</label>
+                            <input type="text" name="youtube_link" value="{{ $attraction->youtube_link}}" class="form-control"
+                                id="exampleFormControlInput1">
+                        </div>
+						<div class="form-group">
+                            <label for="exampleFormControlInput1">Instagram Link</label>
+                            <input type="text" name="instagram_link" value="{{ $attraction->instagram_link}}" class="form-control"
+                                id="exampleFormControlInput1">
+                        </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Deskripsi</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{ $attraction->address}}

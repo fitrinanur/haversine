@@ -45,6 +45,7 @@ class UserService
         $user->email = $request->email;
         $user->name = $request->name;
         $user->phone_number = $request->phone_number;
+		$user->address = $request->address;
         $user->update();
 
         return $user;
