@@ -18,7 +18,8 @@ Route::get('/gallery-page','WebsiteController@galleryPage')->name('website.galle
 Route::get('/attraction-direction-page','WebsiteController@directionPage')->name('website.direction-page');
 Route::post('/attraction-direction-page','WebsiteController@directionStore')->name('direction.store');
 Route::get('/nearly-page','WebsiteController@nearlyPage')->name('website.nearly-page');
-Route::post('/nearly-process','WebsiteController@nearlyProcess')->name('website.nearlyProcess');
+//Route::post('/nearly-process','WebsiteController@nearlyProcess')->name('website.nearlyProcess');
+Route::get('/location-redirect','WebsiteController@location')->name('website.location');
 
 Auth::routes();
 

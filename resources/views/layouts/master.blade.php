@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
     <!-- Font Awesome -->
     <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?&region=GB&key=AIzaSyDPpj9u1EbTAyxACtlLNj5wf33-HazoSV4&libraries=geometry"></script>
     @stack('styles')
 </head>
 <body>
@@ -31,6 +32,9 @@
     </div>
 
     @include('layouts.script')
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gmap3/7.2.0/gmap3.min.js"></script>
     @stack('javascript')
+
 </body>
 </html>

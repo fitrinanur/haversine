@@ -5,8 +5,6 @@
         <div class="card-body">
             <div class="card">
                 <div class="card-body">
-                    
-
                     <div class="row">
                         <div class="col-md-8">
                             <p style="color:dodgerblue">Lokasi anda saat ini :</p>
@@ -15,9 +13,8 @@
                             </p>
                         </div>
                         <div class="col-md-4">
-                            <iframe width="100%" height="300" marginwidth="0"
-                                src="https://maps.google.com/maps?q={{ $latitude }},{{ $longitude }}&hl=es;z=16&amp;output=embed">
-                            </iframe>
+                            <div id="maps-area" style="height: 200px;width: 300px">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,9 +65,8 @@
                         @endforeach
                     </div>
                     <div class="col-md-4">
-                        <iframe width="100%" height="300" marginwidth="0"
-                            src="https://maps.google.com/maps?q={{ $attraction->latitude }},{{ $attraction->longitude }}&hl=es;z=16&amp;output=embed">
-                        </iframe><br>
+                        <div class="maps-area" style="height: 200px;width: 300px" data-id="{{$attraction->id}}" >
+                        </div>
                         <div class="header-info">
                             <ul class="header-social">
                                 <li style="background-color:tomato"><a href="#"

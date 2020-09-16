@@ -9,12 +9,13 @@ use App\Guestbook;
 use App\Services\AttractionService;
 use League\Geotools\Coordinate\Ellipsoid;
 use Toin0u\Geotools\Facade\Geotools;
+use Mapper;
 
 
 class WebsiteController extends Controller
 {
     private $attraction;
-    
+
     /**
      * __construct
      *
@@ -30,41 +31,41 @@ class WebsiteController extends Controller
      *
      * @return void
      */
-    public function getRecommendation($count = 10){
-        if(request()->get('lat') != null && request()->get('lon') != null) {
-            $latitude = floatval(request('lat'));
-            $longitude = floatval(request('lon'));
-
-            
-
-            $range = 20;
-
-            $attractions = Attraction::location($latitude, $longitude, $range)
-                ->get();
-            while ($attractions->count() < $count) {
-                $range += 20;
-                $attractions = Attraction::location($latitude, $longitude, $range)
-                    ->take($count)
-                    ->get();
-            }
-        }
-        else {
-            $attractions = Attraction::inRandomOrder()->take($count)->get();
-        }
-
-        return view ('website.recommendation',compact('attractions','latitude','longitude'));
-    }
+//    public function getRecommendation($count = 10){
+////
+//        if(request()->get('lat') != null && request()->get('lon') != null) {
+//            $latitude = floatval(request('lat'));
+//            $longitude = floatval(request('lon'));
+//
+//
+//
+//            $range = 20;
+//
+//            $attractions = Attraction::location($latitude, $longitude, $range)
+//                ->get();
+//            while ($attractions->count() < $count) {
+//                $range += 20;
+//                $attractions = Attraction::location($latitude, $longitude, $range)
+//                    ->take($count)
+//                    ->get();
+//            }
+//        }
+//        else {
+//            $attractions = Attraction::inRandomOrder()->take($count)->get();
+//        }
+//
+//        return view ('website.recommendation',compact('attractions','latitude','longitude'));
+//    }
     /**
      * index
      *
      * @return void
      */
 
-    
+
     public function index()
     {
-        $attractions =  Attraction::limit(3);
-        return view('website.index',compact('attractions'));
+            return view('website.index', compact('attractions'));
     }
 
     /**
@@ -76,7 +77,11 @@ class WebsiteController extends Controller
     {
         $attractionTypes = AttractionType::all();
         $attractions = Attraction::all();
-        return view('website.gallery', compact('attractions', 'attractionTypes')); 
+        return view('website.gallery', compact('attractions', 'attractionTypes'));
+    }
+    public function location()
+    {
+        return view('website.location');
     }
 
     /**
@@ -88,14 +93,39 @@ class WebsiteController extends Controller
     {
         $directionTypes = $this->directionType();
 
-        return view('website.direction', compact('directionTypes','response','start_location','end_location','map')); 
-      
+        return view('website.direction', compact('directionTypes','response','start_location','end_location','map'));
+
     }
 
-    public function nearlyPage()
+    public function nearlyPage($count=10)
     {
-        
-        return view('website.nearly');
+        if (request()->get('latitude') && request()->get('longitude')){
+
+            $mapWithPolyline = [];
+            $latitude = floatval(request()->get('latitude'));
+            $longitude = floatval(request()->get('longitude'));
+            $range = 30;
+
+            $attractions = Attraction::location($latitude, $longitude, $range)
+                ->get();
+            while ($attractions->count() < $count) {
+                $range += 40;
+                $attractions = Attraction::location($latitude, $longitude, $range)
+                    ->take($count)
+                    ->get();
+            }
+
+            foreach ($attractions as $attraction){
+                $distance = round($attraction->distance,3);
+                $mapWithPolyline = Mapper::map($latitude, $longitude,['zoom' => 11])
+                    ->informationWindow($attraction->latitude, $attraction->longitude, $distance, ['markers' => ['animation' => 'DROP']])
+                    ->polyline([['latitude' => $latitude, 'longitude' => $longitude], ['latitude' => $attraction->latitude, 'longitude' => $attraction->longitude]], ['strokeColor' => '#EA4335', 'strokeWeight' => 3]);
+            }
+            return view('website.nearly',compact('latitude','longitude','attractions','mapWithPolyline'));
+        }
+        else{
+            return view('website.location');
+        }
     }
 
     private function directionType()
@@ -119,7 +149,7 @@ class WebsiteController extends Controller
             $url = "https://www.google.com/maps/dir/?api=1&origin=".$origin."&destination=".$destination;
             // https://maps.google.com?saddr=".$origin."&daddr=".$destination314+Avery+Avenue+Syracuse+NY+13204
             return redirect()->away($url);
-           
+
         }else{
             $lat = $request->latitude;
             $lang = $request->longitude;
@@ -128,6 +158,7 @@ class WebsiteController extends Controller
             $lon = request()->get('lon');
             $url = "https://www.google.com/maps/dir/Current+Location/".$lat.",".$lang;
             return redirect()->away($url);
+
         }
     }
 
@@ -147,4 +178,23 @@ class WebsiteController extends Controller
              return redirect()->back();
          }
     }
+
+    public function cobaPolyline()
+    {
+        Mapper::map(-7.7470586, 110.39014200000001)->polyline([['latitude' => -7.7470586, 'longitude' => 110.39014200000001], ['latitude' => 52.381128999999990000, 'longitude' => 0.470085000000040000]], ['strokeColor' => '#AED4FC', 'strokeWeight' => 2]);
+
+        return view('website.polyline');
+    }
+
+    public function position($count = 10){
+        if(request()->get('lat') != null && request()->get('lon') != null) {
+            $latitude = floatval(request('lat'));
+            $longitude = floatval(request('lon'));
+
+
+
+        }
+        return view ('website.map',compact('latitude','longitude'));
+    }
+
 }

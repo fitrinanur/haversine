@@ -151,7 +151,7 @@
 </div>
 
 @stop
-{{-- @push('javascript')
+@push('javascript')
 <script type="application/javascript">
     $(document).ready(function () {
         getLocation();
@@ -176,21 +176,6 @@
             let lon = position.coords.longitude;
             console.log(lat);
             console.log(lon);
-
-            $.ajax({
-                url: '/recommendation',
-                type: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                data: {
-                    'lat': lat,
-                    'lon': lon,
-                },
-                success: function (response) {
-                    $('#recommendation').html(response)
-                }
-            })
         }
 
     }
@@ -214,7 +199,7 @@
                 break;
         }
     }
-    
+
 
 </script>
-@endpush --}}
+@endpush

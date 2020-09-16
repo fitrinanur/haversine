@@ -34,14 +34,14 @@ class Attraction extends Model
         return $this->belongsTo(City::class);
     }
 
-    public function scopeLocation(Builder $query, $latitude, $longitude, $radius = 10){
-        $haversine = '( 3959 * acos( cos( radians('.$latitude.') ) *
+    public function scopeLocation(Builder $query, $latitude, $longitude, $radius = 30){
+        $haversine = '( 6371 * acos( cos( radians('.$latitude.') ) *
 			         cos( radians( latitude ) )
 			         * cos( radians( longitude ) - radians('.$longitude.')
 			         ) + sin( radians('.$latitude.') ) *
 			         sin( radians( latitude ) ) )
 			       ) AS distance';
-        $where =   "ROUND(( 10  * 3956 * acos( cos( radians('$latitude') ) * "
+        $where =   "ROUND(( 10  * 6371 * acos( cos( radians('$latitude') ) * "
             . "cos( radians(latitude) ) * "
             . "cos( radians(longitude) - radians('$longitude') ) + "
             . "sin( radians('$latitude') ) * "
@@ -52,5 +52,5 @@ class Attraction extends Model
             ->whereRaw($where)
             ->orderBy('distance');
     }
-    
+
 }
