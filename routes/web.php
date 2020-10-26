@@ -20,7 +20,7 @@ Route::post('/attraction-direction-page','WebsiteController@directionStore')->na
 Route::get('/nearly-page','WebsiteController@nearlyPage')->name('website.nearly-page');
 //Route::post('/nearly-process','WebsiteController@nearlyProcess')->name('website.nearlyProcess');
 Route::get('/location-redirect','WebsiteController@location')->name('website.location');
-
+Route::post('/nearly-page','WebsiteController@nearlyPage')->name('recommendation.filter');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

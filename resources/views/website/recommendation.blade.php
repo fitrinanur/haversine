@@ -30,7 +30,9 @@
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-md-8">
+                        
                         <h3 class="card-title">{{ $attraction->name }}</h3>
+                        
                         <table class="table table-sm">
                             <tbody>
                                 <tr>

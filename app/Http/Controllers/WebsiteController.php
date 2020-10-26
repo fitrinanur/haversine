@@ -99,29 +99,41 @@ class WebsiteController extends Controller
 
     public function nearlyPage($count=10)
     {
+        // dd(request()->all());
         if (request()->get('latitude') && request()->get('longitude')){
-
+            
+            $attractionTypes = AttractionType::all();
             $mapWithPolyline = [];
             $latitude = floatval(request()->get('latitude'));
             $longitude = floatval(request()->get('longitude'));
-            $range = 30;
+            $range = 100;
 
-            $attractions = Attraction::location($latitude, $longitude, $range)
-                ->get();
-            while ($attractions->count() < $count) {
-                $range += 40;
-                $attractions = Attraction::location($latitude, $longitude, $range)
-                    ->take($count)
-                    ->get();
-            }
+            $category=request()->get('attractionType');
+            if($category){
+                $attractions = Attraction::location($latitude, $longitude, $range)->where('attraction_type_id',$category)->take($count)->get();
+                
+                foreach ($attractions as $attraction){
+                    $distance = round($attraction->distance,3);
+                
+                    $mapWithPolyline = Mapper::map($latitude, $longitude,['zoom' => 11])
+                        ->informationWindow($attraction->latitude, $attraction->longitude, $distance, ['markers' => ['animation' => 'DROP']])
+                        ->polyline([['latitude' => $latitude, 'longitude' => $longitude], ['latitude' => $attraction->latitude, 'longitude' => $attraction->longitude]], ['strokeColor' => '#EA4335', 'strokeWeight' => 3]);
+                }
+            } else {
+                $attractions = Attraction::location($latitude, $longitude, $range)->take($count)->get();
+                
+                foreach ($attractions as $attraction){
+                    $distance = round($attraction->distance,3);
+                
+                    $mapWithPolyline = Mapper::map($latitude, $longitude,['zoom' => 11])
+                        ->informationWindow($attraction->latitude, $attraction->longitude, $distance, ['markers' => ['animation' => 'DROP']])
+                        ->polyline([['latitude' => $latitude, 'longitude' => $longitude], ['latitude' => $attraction->latitude, 'longitude' => $attraction->longitude]], ['strokeColor' => '#EA4335', 'strokeWeight' => 3]);
+                }
 
-            foreach ($attractions as $attraction){
-                $distance = round($attraction->distance,3);
-                $mapWithPolyline = Mapper::map($latitude, $longitude,['zoom' => 11])
-                    ->informationWindow($attraction->latitude, $attraction->longitude, $distance, ['markers' => ['animation' => 'DROP']])
-                    ->polyline([['latitude' => $latitude, 'longitude' => $longitude], ['latitude' => $attraction->latitude, 'longitude' => $attraction->longitude]], ['strokeColor' => '#EA4335', 'strokeWeight' => 3]);
             }
-            return view('website.nearly',compact('latitude','longitude','attractions','mapWithPolyline'));
+           
+            
+            return view('website.nearly',compact('latitude','longitude','attractions','mapWithPolyline','attractionTypes','category'));
         }
         else{
             return view('website.location');
